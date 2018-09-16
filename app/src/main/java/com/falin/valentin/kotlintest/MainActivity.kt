@@ -11,14 +11,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        i1 = 1
-        val int = sum(25)
-        println(int)
-        printSmf("First", b = 1)
-        printSmf("Second")
-        printSmf("Third", b = -66)
-        fakeSum("2", "3")
-        fakeSum("gggg", "3")
+
+        println(useFoo()[0])
+        println(useFoo()[1])
+        println(useFoo()[2])
+        println(useFoo()[3])
+//        i1 = 1
+//        val int = sum(25)
+//        println(int)
+//        printSmf("First", b = 1)
+//        printSmf("Second")
+//        printSmf("Third", b = -66)
+//        fakeSum("2", "3")
+//        fakeSum("gggg", "3")
     }
 
     fun foo(name: String, number: Int = 20, toUpperCase: Boolean = false) = (if (toUpperCase) name.toUpperCase() else name) + number
@@ -31,8 +36,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     fun sum(a: Int, b: Int = -11): Int {
-        val c: Int
-        c = a + b
+        val c: Int = a + b
         return c
     }
 
