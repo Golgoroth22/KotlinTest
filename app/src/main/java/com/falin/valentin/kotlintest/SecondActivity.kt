@@ -16,6 +16,12 @@ class SecondActivity : AppCompatActivity() {
         val oldest = persons.maxBy { it.age ?: 0 }
 
         println("The oldest is - $oldest")
+
+        println(maxOf(persons))
+    }
+
+    fun maxOf(persons: List<Person>): Person? {
+        return persons.maxBy { it.age ?: 0 }
     }
 }
 
