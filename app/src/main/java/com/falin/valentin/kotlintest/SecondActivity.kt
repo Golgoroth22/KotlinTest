@@ -18,10 +18,17 @@ class SecondActivity : AppCompatActivity() {
         println("The oldest is - $oldest")
 
         println(maxOf(persons))
+
+        println(test1("111", "222"))
     }
 
     fun maxOf(persons: List<Person>): Person? {
         return persons.maxBy { it.age ?: 0 }
     }
+
+    fun test1(text1: String, text2: String): String {
+        return if (Integer.parseInt(text1) > Integer.parseInt(text2)) text1 else text2
+    }
+
 }
 
