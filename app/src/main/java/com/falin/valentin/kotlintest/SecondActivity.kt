@@ -22,6 +22,11 @@ class SecondActivity : AppCompatActivity() {
         println(test1("111", "222"))
 
         println("${test2(2, 5)} ${persons[2]}")
+
+        val catBarsik = Cat("Barsik", 3, true)
+        catBarsik.age = 6
+
+        println(catBarsik.toString().chik())
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -35,3 +40,6 @@ class SecondActivity : AppCompatActivity() {
 
 fun test2(a: Int, b: Int): Int = if (a > b) a else b
 
+fun String.chik(): String {
+    return "$this chik";
+}
