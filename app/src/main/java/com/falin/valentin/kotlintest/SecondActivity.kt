@@ -20,6 +20,8 @@ class SecondActivity : AppCompatActivity() {
         println(maxOf(persons))
 
         println(test1("111", "222"))
+
+        println("${test2(2, 5)} ${persons[2]}")
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -29,6 +31,7 @@ class SecondActivity : AppCompatActivity() {
     fun test1(text1: String, text2: String): String {
         return if (Integer.parseInt(text1) > Integer.parseInt(text2)) text1 else text2
     }
-
 }
+
+fun test2(a: Int, b: Int): Int = if (a > b) a else b
 
