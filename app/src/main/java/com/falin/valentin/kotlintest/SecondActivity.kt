@@ -29,6 +29,11 @@ class SecondActivity : AppCompatActivity() {
         println(catBarsik.toString().chik())
 
         println(testStreams().toString())
+
+        highOrderFunc { arg1, arg2 ->
+            Unit
+            println("callback runned")
+        }
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -40,12 +45,17 @@ class SecondActivity : AppCompatActivity() {
     }
 }
 
+fun highOrderFunc(callback: (arg1: Int, arg2: String) -> Unit) {
+    val result = test2(4, 5)
+    callback(result, "Kotlin > Java")
+}
+
 fun testStreams(): List<Int> {
     val list = listOf(1, 2, 3, 4, 5)
-            .filter { n -> n % 2 == 1 }
-            .map { n -> n * n }
-            .drop(1)
-            .take(1)
+            .filter { n -> n % 2 == 1 } // 1, 3, 5
+            .map { n -> n * n } // 1, 9, 25
+            .drop(1) // 9, 25
+            .take(1) // 9
 
     return list
 }
