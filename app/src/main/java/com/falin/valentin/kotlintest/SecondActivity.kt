@@ -27,6 +27,8 @@ class SecondActivity : AppCompatActivity() {
         catBarsik.age = 6
 
         println(catBarsik.toString().chik())
+
+        println(testStreams().toString())
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -36,6 +38,16 @@ class SecondActivity : AppCompatActivity() {
     fun test1(text1: String, text2: String): String {
         return if (Integer.parseInt(text1) > Integer.parseInt(text2)) text1 else text2
     }
+}
+
+fun testStreams(): List<Int> {
+    val list = listOf(1, 2, 3, 4, 5)
+            .filter { n -> n % 2 == 1 }
+            .map { n -> n * n }
+            .drop(1)
+            .take(1)
+
+    return list
 }
 
 fun test2(a: Int, b: Int): Int = if (a > b) a else b
