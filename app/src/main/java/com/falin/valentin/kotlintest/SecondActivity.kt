@@ -21,7 +21,7 @@ class SecondActivity : AppCompatActivity() {
 
         println(test1("111", "222"))
 
-        println("${test2(2, 5)} ${persons[2]}")
+        println("${maxTest2(2, 5)} ${persons[2]}")
 
         val catBarsik = Cat("Barsik", 3, true)
         catBarsik.age = 6
@@ -34,6 +34,8 @@ class SecondActivity : AppCompatActivity() {
             Unit
             println("callback runned")
         }
+
+        stringTamplatesTest(persons[0].name)
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -46,7 +48,7 @@ class SecondActivity : AppCompatActivity() {
 }
 
 fun highOrderFunc(callback: (arg1: Int, arg2: String) -> Unit) {
-    val result = test2(4, 5)
+    val result = maxTest2(4, 5)
     callback(result, "Kotlin > Java")
 }
 
@@ -60,8 +62,16 @@ fun testStreams(): List<Int> {
     return list
 }
 
-fun test2(a: Int, b: Int): Int = if (a > b) a else b
+fun maxTest2(a: Int, b: Int): Int = if (a > b) a else b
+
+fun maxTest3(a: Int, b: Int) = if (a > b) a else b
+
+fun stringTamplatesTest(arg : String) {
+    val text = if (arg.length > 2) arg else "arg lenghr < 2"
+    println("Text test + $text")
+}
 
 fun String.chik(): String {
     return "$this chik";
 }
+
