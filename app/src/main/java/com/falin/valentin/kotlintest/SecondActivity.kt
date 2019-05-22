@@ -1,7 +1,17 @@
 package com.falin.valentin.kotlintest
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+import android.widget.Toast
+
+private var b = 0
+
+var cou = 0
+    set(value) {
+        b = value
+        field = value
+    }
 
 class SecondActivity : AppCompatActivity() {
 
@@ -9,33 +19,37 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val persons = listOf(Person("Bob", null, true),
-                Person("Alice", 13, false),
-                Person("Jhon", 45, true))
+        Toast.makeText(this, "!!!!!!!!!!!!!!!!!!!!!!!!!!", Toast.LENGTH_LONG).show()
+        println("!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("${++cou}")
+        Toast.makeText(this, "${++cou}", Toast.LENGTH_LONG).show()
+//        val persons = listOf(Person("Bob", null, true),
+//                Person("Alice", 13, false),
+//                Person("Jhon", 45, true))
+//
+//        val oldest = persons.maxBy { it.age ?: 0 }
+//
+//        println("The oldest is - $oldest")
+//
+//        println(maxOf(persons))
+//
+//        println(test1("111", "222"))
+//
+//        println("${maxTest2(2, 5)} ${persons[2]}")
+//
+//        val catBarsik = Cat("Barsik", 3, true)
+//        catBarsik.age = 6
+//
+//        println(catBarsik.toString().chik())
+//
+//        println(testStreams().toString())
+//
+//        highOrderFunc { arg1, arg2 ->
+//            Unit
+//            println("callback runned")
+//        }
 
-        val oldest = persons.maxBy { it.age ?: 0 }
-
-        println("The oldest is - $oldest")
-
-        println(maxOf(persons))
-
-        println(test1("111", "222"))
-
-        println("${maxTest2(2, 5)} ${persons[2]}")
-
-        val catBarsik = Cat("Barsik", 3, true)
-        catBarsik.age = 6
-
-        println(catBarsik.toString().chik())
-
-        println(testStreams().toString())
-
-        highOrderFunc { arg1, arg2 ->
-            Unit
-            println("callback runned")
-        }
-
-        stringTamplatesTest(persons[0].name)
+//        stringTamplatesTest(persons[0].name)
     }
 
     fun maxOf(persons: List<Person>): Person? {
@@ -66,7 +80,7 @@ fun maxTest2(a: Int, b: Int): Int = if (a > b) a else b
 
 fun maxTest3(a: Int, b: Int) = if (a > b) a else b
 
-fun stringTamplatesTest(arg : String) {
+fun stringTamplatesTest(arg: String) {
     val text = if (arg.length > 2) arg else "arg lenghr < 2"
     println("Text test + $text")
 }
